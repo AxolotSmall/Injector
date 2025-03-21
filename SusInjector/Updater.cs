@@ -10,17 +10,6 @@ namespace HorionInjector
 {
     partial class MainWindow
     {
-        private void CheckForUpdate()
-        {
-
-            var latest = new WebClient().DownloadString("https://horion.download/latest");
-            if (Version.Parse(latest) > GetVersion())
-            {
-                if (MessageBox.Show("New update available! Do you want to update now?", null, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-                    Update();
-            }
-
-        }
 
         private void Update()
         {

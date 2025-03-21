@@ -4,9 +4,9 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net48</TargetFramework>
     <UseWPF>true</UseWPF>
-    <AssemblyName>HorionInjector</AssemblyName>
+    <AssemblyName>SusInjector</AssemblyName>
     <StartupObject>HorionInjector.App</StartupObject>
-    <ApplicationIcon>horion.ico</ApplicationIcon>
+    <ApplicationIcon>sus.ico</ApplicationIcon>
     <Platforms>x64</Platforms>
     <Authors>Horion Developers</Authors>
     <PackageProjectUrl>https://github.com/horionclient</PackageProjectUrl>
@@ -21,6 +21,8 @@
     <Product>Horion Injector</Product>
     <PackageIcon></PackageIcon>
     <PackageIconUrl />
+    <RootNamespace>SusInjector</RootNamespace>
+    <PlatformTarget>ARM64</PlatformTarget>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -38,6 +40,10 @@
   <ItemGroup>
     <None Remove="console.png" />
     <None Remove="horion-banner.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="sus.ico" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,4 +1,4 @@
-﻿namespace HorionInjector
+﻿namespace SusInjector
 {
     /// <summary>
     /// Interaction logic for App.xaml

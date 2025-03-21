@@ -32,7 +32,7 @@ namespace HorionInjector
             if (File.Exists(oldPath)) File.Delete(oldPath);
 
             InitializeComponent();
-            VersionLabel.Content = $"v{GetVersion().Major}.{GetVersion().Minor}.{GetVersion().Build}";
+            VersionLabel.Content = "1.0.0";
             SetConnectionState(ConnectionState.None);
 
             Task.Run(() =>
@@ -56,11 +56,7 @@ namespace HorionInjector
 
             if (!CheckConnection())
             {
-                MessageBox.Show("Couldn't connect to download server. You can still inject a custom DLL.");
-            }
-            else
-            {
-                CheckForUpdate();
+                MessageBox.Show("Automatic donwloads are temporarily disabled.");
             }
         }
 
@@ -104,29 +100,9 @@ namespace HorionInjector
 
         private void InjectButton_Left(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Automatic DLL downloading is temporarily disabled. Please download the DLL manually.");
             if (!_done) return;
 
-            SetStatus("checking connection");
-            if (!CheckConnection())
-            {
-                if (MessageBox.Show("Can't reach download server. Try anyways?", null, MessageBoxButton.YesNo) == MessageBoxResult.No)
-                {
-                    SetStatus("done");
-                    return;
-                }
-            }
-
-            SetStatus("downloading DLL");
-            var wc = new WebClient();
-            var file = Path.Combine(Path.GetTempPath(), "Horion.dll");
-            wc.DownloadFileCompleted += (_, __) => Inject(file);
-            wc.DownloadFileAsync(new Uri("https://horion.download/bin/Horion.dll"), file);
-        }
-
-        private void InjectButton_Right(object sender, MouseButtonEventArgs e)
-        {
-            if (!_done) return;
-            
             SetStatus("selecting DLL");
             var diag = new OpenFileDialog
             {
@@ -138,6 +114,12 @@ namespace HorionInjector
                 Inject(diag.FileName);
             else
                 SetStatus("done");
+
+        }
+
+        private void InjectButton_Right(object sender, MouseButtonEventArgs e)
+        {
+            
         }
 
         private void ConsoleButton_Click(object sender, MouseButtonEventArgs e)
