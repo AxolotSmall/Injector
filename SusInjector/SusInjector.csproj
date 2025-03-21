@@ -8,17 +8,17 @@
     <StartupObject>HorionInjector.App</StartupObject>
     <ApplicationIcon>sus.ico</ApplicationIcon>
     <Platforms>x64</Platforms>
-    <Authors>Horion Developers</Authors>
+    <Authors>Based on Horion Developers. Forked by Axolotsmall</Authors>
     <PackageProjectUrl>https://github.com/horionclient</PackageProjectUrl>
     <RepositoryType>GitHub</RepositoryType>
     <RepositoryUrl>https://github.com/horionclient/Injector</RepositoryUrl>
-    <Description>Injector for Horion, a Minecraft: Bedrock Edition utility mod</Description>
+    <Description>Injector for Sus V2, a Minecraft: Bedrock Edition utility mod</Description>
     <SignAssembly>false</SignAssembly>
-    <Version>1.1.2</Version>
+    <Version>1.0.0</Version>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Copyright>©2021</Copyright>
-    <PackageId>HorionInjector</PackageId>
-    <Product>Horion Injector</Product>
+    <Copyright>©2025</Copyright>
+    <PackageId>SusInjector</PackageId>
+    <Product>Sus Injector</Product>
     <PackageIcon></PackageIcon>
     <PackageIconUrl />
     <RootNamespace>SusInjector</RootNamespace>
@@ -39,7 +39,7 @@
 
   <ItemGroup>
     <None Remove="console.png" />
-    <None Remove="horion-banner.png" />
+    <None Remove="sus-banner.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,7 +52,7 @@
 
   <ItemGroup>
     <Resource Include="console.png" />
-    <Resource Include="horion-banner.png" />
+    <Resource Include="sus-banner.png" />
   </ItemGroup>
 
 </Project>
